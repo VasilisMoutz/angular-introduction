@@ -9,6 +9,7 @@ import { PersonCardComponent } from './person-card/person-card.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { AppService } from './app.service';
+import { CrudDemoComponent } from './crud-demo/crud-demo/crud-demo.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ import { AppService } from './app.service';
             OutputDemoComponent,
             PersonCardComponent,
             TemplateDrivenFormComponent,
-            ReactiveFormComponent
+            ReactiveFormComponent,
+            CrudDemoComponent
             ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
