@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Person } from './interfaces/person';
-
 import { PersonComponent } from './person/person.component';
 import { PersonAltComponent } from './person-alt/person-alt.component';
 import { EventBindComponent } from './event-bind/event-bind.component';
@@ -9,6 +8,7 @@ import { OutputDemoComponent } from './output-demo/output-demo.component';
 import { PersonCardComponent } from './person-card/person-card.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -25,111 +25,22 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  name: string = "Vasilis";
-  lastname = "Moutzouridios";
+export class AppComponent implements OnInit{
 
-  person: Person = {
-    givenName: 'Vasilis',
-    surName: 'Moutzouridis',
-    age: 26,
-    email: 'basilismoutz@gmail.com',
-    address: 'Volanaki 3'
-  };
-
-  person2: Person = {
-    givenName: 'Vasilios',
-    surName: 'Moutzouridios',
-    age: 36,
-    email: 'basilismoutzou@gmail.com',
-    address: 'Ashfield 97'
-  };
-
-  
-  users: Person[] = [
-    {
-      photoURL: 'https://i.pravatar.cc/?img=1',
-      givenName: 'John',
-      surName: 'Doe',
-      age: 30,
-      email: 'john.doe@example.com',
-      address: '123 Main St',
-    },
-    {
-      photoURL: 'https://i.pravatar.cc/?img=2',
-      givenName: 'Jane',
-      surName: 'Doe',
-      age: 28,
-      email: 'jane.doe@example.com',
-      address: '123 Main St',
-    },
-    {
-      photoURL: 'https://i.pravatar.cc/?img=3',
-      givenName: 'Jim',
-      surName: 'Brown',
-      age: 45,
-      email: 'jim.brown@example.com',
-      address: '456 Park Ave',
-    },
-    {
-      photoURL: 'https://i.pravatar.cc/?img=4',
-      givenName: 'Jill',
-      surName: 'Brown',
-      age: 42,
-      email: 'jill.brown@example.com',
-      address: '456 Park Ave',
-    },
-    {
-      photoURL: 'https://i.pravatar.cc/?img=5',
-      givenName: 'Jake',
-      surName: 'Smith',
-      age: 36,
-      email: 'jake.smith@example.com',
-      address: '789 Broadway',
-    },
-    {
-      photoURL: 'https://i.pravatar.cc/?img=6',
-      givenName: 'Judy',
-      surName: 'Smith',
-      age: 34,
-      email: 'judy.smith@example.com',
-      address: '789 Broadway',
-    },
-    {
-      photoURL: 'https://i.pravatar.cc/?img=7',
-      givenName: 'Jack',
-      surName: 'Johnson',
-      age: 50,
-      email: 'jack.johnson@example.com',
-      address: '321 Oak St',
-    },
-    {
-      photoURL: 'https://i.pravatar.cc/?img=8',
-      givenName: 'Julie',
-      surName: 'Johnson',
-      age: 48,
-      email: 'julie.johnson@example.com',
-      address: '321 Oak St',
-    },
-    {
-      photoURL: 'https://i.pravatar.cc/?img=9',
-      givenName: 'Jerry',
-      surName: 'Davis',
-      age: 55,
-      email: 'jerry.davis@example.com',
-      address: '654 Pine St',
-    },
-    {
-      photoURL: 'https://i.pravatar.cc/?img=10',
-      givenName: 'June',
-      surName: 'Davis',
-      age: 53,
-      email: 'june.davis@example.com',
-      address: '654 Pine St',
-    }
-  ]
+  users: Person[] = [];
 
   sendUser: Person | undefined;
+
+  //Inject Service
+  constructor(private appService: AppService) {}
+
+  //Fill user's content on component initialisation 
+  ngOnInit(): void {
+    this.appService.getAllUsers().subscribe((users) => {
+      this.users = users
+      console.log(this.users);
+    })
+  }
 
   onDeleteUser(i:number) {
     this.users.splice(i, 1)
