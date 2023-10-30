@@ -1,5 +1,5 @@
 
-  <div class="dropdown">
+  <!-- <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
       Dropdown button
     </button>
@@ -10,9 +10,20 @@
       <li><a class="dropdown-item" (click)="onSelection('delete')" role="button">Delete User</a></li>
       <li><a class="dropdown-item" (click)="onSelection('list')" role="button">List Users</a></li>
     </ul>
+  </div> -->
+
+  <div class="myNavBar">
+    <ul>
+        <li class="myNav-item" (click)="onSelection('create')" >Create User</li>
+        <li class="myNav-item" (click)="onSelection('read')" >Read User</li>
+        <li class="myNav-item" (click)="onSelection('update')" >Update User</li>
+        <li class="myNav-item" (click)="onSelection('delete')" >Delete User</li>
+        <li class="myNav-item" (click)="onSelection('list')" >List Users</li>
+    </ul>
   </div>
 
 <ng-container *ngIf="crudOperation" [ngSwitch]="crudOperation">
+    <div class="content-wrap">
     <ng-container *ngSwitchCase="'create'">
         <app-create-user></app-create-user>
     </ng-container>
@@ -28,4 +39,5 @@
     <ng-container *ngSwitchCase="'list'">
         <app-list-users></app-list-users>
     </ng-container>
+    </div>
 </ng-container>

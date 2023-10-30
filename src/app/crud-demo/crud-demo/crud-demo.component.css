@@ -1,0 +1,21 @@
+
+.myNavBar ul{
+    display: flex;
+    background-image: linear-gradient(90deg, rgb(2, 51, 73), rgb(247, 70, 39));
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    z-index: 1;
+}
+
+.myNav-item {
+    letter-spacing: 1.2px;
+    list-style-type: none;
+    padding: 1em 2em;
+    color: white;
+    cursor: pointer;
+}
+
+.content-wrap{
+    margin: 2em;
+}
