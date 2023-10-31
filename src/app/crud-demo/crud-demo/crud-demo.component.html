@@ -25,7 +25,7 @@
 <ng-container *ngIf="crudOperation" [ngSwitch]="crudOperation">
     <div class="content-wrap">
     <ng-container *ngSwitchCase="'create'">
-        <app-create-user></app-create-user>
+        <app-create-user (userCreated)="onSelection('list')"></app-create-user>
     </ng-container>
     <ng-container *ngSwitchCase="'read'">
         <app-read-user></app-read-user>

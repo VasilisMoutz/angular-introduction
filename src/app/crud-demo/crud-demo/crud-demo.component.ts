@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CreateUserComponent } from '../create-user/create-user.component';
 import { ReadUserComponent } from '../read-user/read-user.component';
@@ -19,9 +19,11 @@ import { ListUsersComponent } from '../list-users/list-users.component';
   styleUrls: ['./crud-demo.component.css']
 })
 export class CrudDemoComponent {
+
   crudOperation: string | undefined;
 
   onSelection(operation:string) {
     this.crudOperation = operation;
   }
+
 }
