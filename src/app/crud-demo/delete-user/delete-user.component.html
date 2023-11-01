@@ -1,1 +1,16 @@
-<p>delete-user works!</p>
+
+<div class="form-group">
+
+    <input 
+        type="number"
+        class="form-control"
+        placeholder="Delete user by Id"
+        #userId
+    >
+    <div *ngIf="userNotFound" class="text-danger">
+        User Id not found
+    </div>
+    <button (click)="onClick()" class="btn btn-primary mt-2">
+        Delete
+    </button>
+</div>

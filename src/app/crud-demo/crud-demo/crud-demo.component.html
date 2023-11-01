@@ -1,17 +1,3 @@
-
-  <!-- <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-      Dropdown button
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-      <li><a class="dropdown-item" (click)="onSelection('create')" role="button">Create User</a></li>
-      <li><a class="dropdown-item" (click)="onSelection('read')" role="button">Read User</a></li>
-      <li><a class="dropdown-item" (click)="onSelection('update')" role="button">Update User</a></li>
-      <li><a class="dropdown-item" (click)="onSelection('delete')" role="button">Delete User</a></li>
-      <li><a class="dropdown-item" (click)="onSelection('list')" role="button">List Users</a></li>
-    </ul>
-  </div> -->
-
   <div class="myNavBar">
     <ul>
         <li class="myNav-item" (click)="onSelection('create')" >Create User</li>
@@ -34,7 +20,7 @@
         <app-update-user></app-update-user>
     </ng-container>
     <ng-container *ngSwitchCase="'delete'">
-        <app-delete-user></app-delete-user>
+        <app-delete-user (userDeleted)="onSelection('list')"></app-delete-user>
     </ng-container>
     <ng-container *ngSwitchCase="'list'">
         <app-list-users></app-list-users>

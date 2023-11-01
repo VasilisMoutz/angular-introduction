@@ -107,42 +107,6 @@
       "address": "Palini, Greece",
       "photoURL": "https://i.pravatar.cc/?img=34",
       "id": 12
-    },
-    {
-      "givenName": "Peter",
-      "surName": "Jackson",
-      "age": 56,
-      "email": "peter@wxample.com",
-      "address": "New Zeland",
-      "photoURL": "https://i.pravatar.cc/?img=44",
-      "id": 13
-    },
-    {
-      "givenName": "Vasilios",
-      "surName": "Moutzouridios",
-      "age": "19",
-      "email": "basilismoutzouridis@gmail.com",
-      "address": "VOlanakios 3",
-      "photoURL": "",
-      "id": 14
-    },
-    {
-      "givenName": "INIO",
-      "surName": "iniotato",
-      "age": "23",
-      "email": "basilismoutzouridis@gmail.com",
-      "address": "voal",
-      "photoURL": "",
-      "id": 15
-    },
-    {
-      "givenName": "iniotatotaotatoad",
-      "surName": "ads",
-      "age": "23",
-      "email": "das@as",
-      "address": "as",
-      "photoURL": "",
-      "id": 16
     }
   ]
 }
