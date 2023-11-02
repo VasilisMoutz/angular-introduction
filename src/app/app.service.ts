@@ -25,5 +25,9 @@ export class AppService {
     return this.http.delete<Person>(`http://localhost:3000/users/${id}`)
   }
 
+  updateUser(user: Person) {
+    console.log(user)
+    return this.http.put<Person>(`http://localhost:3000/users/${user.id}`, user)
+  }
 }
 

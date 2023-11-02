@@ -1,1 +1,14 @@
-<p>update-user works!</p>
+<div class="d-flex flex-column gap-2">
+    <app-crud-user-search (userFound)="onUserFound($event)">
+    </app-crud-user-search>
+
+    <div *ngIf="user" class="d-flex flex-column gap-2">
+        <app-crud-user-form
+            [title]="'Update User'"
+            [personInput]="user"
+            (person)="onUpdate($event)"
+        >
+
+        </app-crud-user-form>
+    </div>
+</div>
