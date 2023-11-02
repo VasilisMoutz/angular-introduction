@@ -1,16 +1,7 @@
-
-<div class="form-group">
-
-    <input 
-        type="number"
-        class="form-control"
-        placeholder="Delete user by Id"
-        #userId
-    >
-    <div *ngIf="userNotFound" class="text-danger">
-        User Id not found
+<div class="d-flex flex-column gap-2">
+    <app-crud-user-search (userFound)="onUserFound($event)"></app-crud-user-search>
+    <div *ngIf="user" class="d-flex flex-column gap-2">
+        <app-person-card [person]="user"></app-person-card>
+        <app-danger-confirm (confirm)="onConfirm($event)"></app-danger-confirm>
     </div>
-    <button (click)="onClick()" class="btn btn-primary mt-2">
-        Delete
-    </button>
 </div>

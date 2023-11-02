@@ -1,0 +1,14 @@
+<div class="form-group">
+    <input 
+        type="number"
+        class="form-control"
+        placeholder="Search user by Id"
+        #userId
+    >
+    <div *ngIf="userNotFound" class="text-danger">
+        User Id not found
+    </div>
+    <button (click)="onSearch()" class="btn btn-primary mt-2">
+        Search
+    </button>
+</div>
