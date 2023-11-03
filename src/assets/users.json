@@ -107,6 +107,15 @@
       "address": "Palini, Greece",
       "photoURL": "https://i.pravatar.cc/?img=34",
       "id": 12
+    },
+    {
+      "id": 13,
+      "givenName": "wer",
+      "surName": "wre",
+      "age": "43",
+      "email": "basilismoutzouridis@gmail.com",
+      "address": "bda",
+      "photoURL": ""
     }
   ]
 }
